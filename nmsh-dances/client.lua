@@ -1,4 +1,4 @@
-local NmshCore = exports['nmsh-base']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local isHandcuffed, isSoftCuffed = false, false
 
 local animations = {
@@ -3925,16 +3925,16 @@ AddEventHandler('nmsh-dances:dance', function(pDance)
 
         if pDance == -1 then
             pDance = math.random(noAnimations)
-            NmshCore.Functions.Notify("You randomly selected dance")
+            QBCore.Functions.Notify("You randomly selected dance")
         end
 
         if pDance > noAnimations or pDance <= 0 then
-            NmshCore.Functions.Notify("There are only 3800 dances, select a number inbetween or random (no input)")
+            QBCore.Functions.Notify("There are only 3800 dances, select a number inbetween or random (no input)")
             return
         end
 
         if animations[pDance] and animations[pDance].disabled then
-            NmshCore.Functions.Notify("This dance is disabled", "error", 3000)
+            QBCore.Functions.Notify("This dance is disabled", "error", 3000)
             return
         end
 
